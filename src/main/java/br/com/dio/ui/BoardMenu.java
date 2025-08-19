@@ -11,6 +11,7 @@ import br.com.dio.service.CardService;
 import lombok.AllArgsConstructor;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
@@ -53,7 +54,8 @@ public class BoardMenu {
                 }
             }
         }catch (SQLException ex){
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
+            System.out.println(Arrays.toString(ex.getStackTrace()));
             System.exit(0);
         }
     }
